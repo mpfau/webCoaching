@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- saved from url=(0061)http://de.selfhtml.org/css/eigenschaften/anzeige/position.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>position</title>
+<style type="text/css">
+body { margin:0; padding:0; height:1500px; }
+div { border:1px solid #888; }
+
+#s1 { width:150px; height:35px; }
+#s2 { width:150px; height:35px; }
+#r3 { width:150px; height:35px; position:relative; top:5px; left:25px; background-color:#dfd; }
+#s4 { width:150px; height:35px; }
+#s5 { width:150px; height:35px; }
+#r6 { width:150px; height:35px; position:relative; top:-15px; left:10px; background-color:#fdd; }
+#s7 { width:150px; height:35px; }
+#s8 { width:150px; height:35px; }
+
+#a1 { position:absolute; top:35px; left:240px; width:150px; height:150px; z-index:1; background-color:#ddf; }
+#a2 { position:absolute; top:90px; left:230px; width:120px; height:70px; z-index:2; background-color:#ccf; }
+#a3 { position:absolute; top:220px; left:200px; width:250px; height:250px; z-index:3; background-color:#ffa; }
+#a4 { position:absolute; top:20px; left:20px; width:70px; height:70px; z-index:1; background-color:#ff5; }
+#a5 { position:absolute; top:20px; right:20px; width:70px; height:70px; z-index:2; background-color:#dd2; }
+#a6 { position:absolute; top:130px; left:-50px; width:190px; height:70px; z-index:-1; background-color:#fdd; }
+#a7 { position:absolute; top:530px; left:50px; bottom:50px; right:50px; background-color:#fdd; }
+
+#f1 { position:fixed; top:45px; left:430px; width:150px; height:150px; background-color:#afa; }
+</style>
+</head>
+<body>
+<p>Um <code>position:fixed</code> zu demonstrieren, scrollen Sie an das Ende der Seite.</p>
+
+<div id="s1">s1 static</div>
+<div id="s2">s2 static</div>
+<div id="r3">r3 relative</div>
+<div id="s4">s4 static</div>
+<div id="s5">s5 static</div>
+<div id="r6">r6 relative</div>
+<div id="s7">s7 static</div>
+
+<div id="a1">a1 absolute</div>
+<div id="a2">a2 absolute</div>
+<div id="a3">a3 absolute
+  <div id="a4">a4 absolute</div>
+  <div id="a5">a5 absolute</div>
+  <div id="a6">a6 absolute</div>
+</div>
+
+<div id="a7">a7 absolute</div>
+
+<div id="f1">f1 fixed</div>
+
+<div id="s8">s8 static</div>
+
+</body></html>

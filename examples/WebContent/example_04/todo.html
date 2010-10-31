@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>My todo list</title>
+<link rel="stylesheet" href="todo.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="todo.js"></script>
+</head>
+<body>
+<div id="content">
+	<div id="header">Status: Online</div>
+	<div class="horizontalBox">
+		<div id="tasks_container">
+			<div id="tasks">
+				<div class="tabs">
+					<div class="spacer"></div>
+					<div class="tab selected">Current</div>
+					<div class="spacer"></div>
+					<div class="tab">Finished</div>
+					<div class="spacer"></div>
+				</div>
+				<div id="newTask-container" class="tasklist">
+					<input type="text" id="newTask" name="newTask" value="">
+				</div>
+				<div id="CurrentTasks" class="tasklist">
+					<table class="tasks">
+						<tbody>
+							<tr>
+								<td class="column0">Milch einkaufen</td>
+								<td class="column1">28.11.2010</td>
+							</tr>
+							<tr class="selected">
+								<td class="column0">Auto waschen</td>
+								<td class="column1">28.10.2010</td>
+							</tr>
+							<tr>
+								<td class="column0">zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt</td>
+								<td class="column1">zu viel Inhalt zu viel Inhalt zu viel Inhalt</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="FinishedTasks" class="tasklist" style="display:none;">DeletedTasks</div>
+			</div>
+		</div>
+		<div id="details_container">
+			<div id="details">
+				<div class="headline">Auto waschen</div>
+				<div class="date">28.10.2010</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
