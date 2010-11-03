@@ -212,28 +212,38 @@ http://yuml.me/diagram/scruffy;dir:LR;/class/edit/[Selector]-%3E1[DOM-Element],%
 * e.g. don't use `td.column0 { width: 80%; }`
 * but `table.tasks > tbody > tr > td.column0`
 
+!SLIDE
+# Tasks
+
 !SLIDE bullets smaller
-#Task one
+# #1
 * Edit the css-File of example_01 for matching example_02
 * Use [CSS3](http://dev.w3.org/csswg/css3-flexbox/) if you like (<http://www.html5rocks.com/tutorials/flexbox/quick/>)
 
 !SLIDE bullets smaller
-#Task two
+# #2
 * Edit the css-File of example_02 for matching example_03
 * You have to use CSS3!
 
 !SLIDE bullets smaller
-#Task three
-* Javascript
-** Include jquery library
-** create a message box
+# #3
+* Javascript kick-start:
+* Include jquery library
+* create a message box
+
+!SLIDE bullets smaller
+# #4
+* save the business data as json
+* use jquery to make use of the data
+
 
 !SLIDE bullets smaller
 #How to move on?
 * multiple selection -> updates, deletes
 * offline mode (HTML5)
 * push of data, e.g. concurrent modification (HTML5 comet)
-* 
+* let the user add tabs (jquery-ui) plugin
+* provide a date selector (jquery-ui) 
 
 
 TODO:
@@ -243,3 +253,4 @@ TODO:
 --Javascript Folien
 --Portal Folien
 --Sproutcore Samples und Folien
+

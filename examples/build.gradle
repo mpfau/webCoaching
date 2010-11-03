@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+//usePlugin 'groovy'
+
+sourceCompatibility = 1.5
+
+defaultTasks "clean", "package" 
+
+repositories {
+    mavenCentral()
+    mavenRepo urls: 'http://repository.springsource.com/maven/bundles/release'
+    mavenRepo urls: 'http://repository.springsource.com/maven/bundles/external'
+    mavenRepo urls: 'http://repository.springsource.com/maven/libraries/release'
+    mavenRepo urls: 'http://repository.springsource.com/maven/libraries/external'
+    mavenRepo urls: 'http://repository.jboss.org/maven2/'
+}
+
+dependencies {
+//	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.0'
+    testCompile 'junit:junit:4.7'
+    compile 'org.slf4j:slf4j-api:1.5.10'
+    compile 'org.slf4j:slf4j-simple:1.5.10'
+    compile 'org.jboss.resteasy:resteasy-jaxrs:1.2.1.GA'
+    compile 'org.jboss.resteasy:resteasy-jackson-provider:1.2.1.GA'
+    compile 'org.eclipse.jetty.aggregate:jetty-servlet:7.0.0.RC6'
+}
