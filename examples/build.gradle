@@ -27,3 +27,7 @@ dependencies {
     compile 'org.jboss.resteasy:resteasy-jackson-provider:1.2.1.GA'
     compile 'org.eclipse.jetty.aggregate:jetty-servlet:7.0.0.RC6'
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '0.9-rc-2'
+}
