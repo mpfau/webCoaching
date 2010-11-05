@@ -7,7 +7,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher;
 
-import service.WebSocketEventBus;
+import service.WebSocketEventBusServlet;
 
 public class MyServer {
 	private Server server;
@@ -21,16 +21,16 @@ public class MyServer {
 		server = new Server(8080);
 
 		HandlerList handlers = new HandlerList();
-		handlers.setHandlers(new Handler[] {createServletHandler(), createEventBus(), createResourceHandler()});
+		handlers.setHandlers(new Handler[] {createServletHandler(), createEventBusServletHandler(), createResourceHandler()});
 		server.setHandler(handlers);
 
 		server.start();
 	}
 
-	private Handler createEventBus() {
+	private Handler createEventBusServletHandler() {
 		ServletContextHandler servletHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
-		servletHandler.setContextPath("/event/");
-		servletHandler.addServlet(new ServletHolder(new WebSocketEventBus()), "/*");
+		servletHandler.setContextPath("/event");
+		servletHandler.addServlet(new ServletHolder(new WebSocketEventBusServlet()), "/*");
 		return servletHandler;
 	}
 

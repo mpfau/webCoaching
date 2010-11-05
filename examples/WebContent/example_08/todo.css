@@ -149,6 +149,14 @@ table.tasks > tbody > tr:nth-child(odd):hover {
 	background-color: #d2ebf9;
 }
 
+table.tasks > tbody > tr.updatedTask {
+	background-color: orange;
+}
+
+table.tasks > tbody > tr.addedTask {
+	background-color: green;
+}
+
 table.tasks > tbody > tr > td {
 	border-top: 1px solid #CCC;
 	vertical-align: top;

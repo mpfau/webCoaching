@@ -116,6 +116,7 @@ function Controller() {
 		}});
 		$(document).bind('TASKS_UPDATED', function() {
 			controller.updateTable();
+			$(document).trigger('TABLE_UPDATED');
 		});
 	};
 	
@@ -194,4 +195,53 @@ $(document).ready(function() {
 	var controller = new Controller();
     controller.updateTable();
     controller.addActions();
+    connect();
 });
+
+function connect() {
+	if (!window.WebSocket)
+	    alert("WebSocket not supported by this browser");
+	eventBus.connect();
+}
+
+  
+var eventBus = {
+	connect : function() {
+		// var location =
+		// document.location.toString().replace('http://','ws://').replace('https://','wss://');
+		var target = 'ws://' + document.location.host + '/event/';
+		this._ws = new WebSocket(target);
+		this._ws.onopen = this._onopen;
+		this._ws.onmessage = this._onmessage;
+		this._ws.onclose = this._onclose;
+	},
+
+	_onopen : function() {
+		$('#header').empty().append('Status: Connected');
+	},
+
+	_send : function(message) {
+		if (this._ws)
+			this._ws.send(message);
+	},
+
+	_onmessage : function(m) {
+		if (m.data) {
+			var busEvent = JSON.parse(m.data);
+			$(document).bind('TABLE_UPDATED', function() {
+				$(document).unbind('TABLE_UPDATED');
+				var tr = $('table.tasks > tbody > tr[taskid=' + busEvent.taskid + ']');
+				tr.addClass(busEvent.type, 1000, function() {
+						tr.delay(2000).removeClass(busEvent.type,1000);
+				})
+			});
+			taskDao.loadTasks();
+		}
+	},
+
+	_onclose : function(m) {
+		this._ws = null;
+		$('#header').empty().append('Status: Not Connected');
+		alert('lost the connection');
+	}
+}
