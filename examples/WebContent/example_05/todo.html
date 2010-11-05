@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>My todo list</title>
 <link rel="stylesheet" href="todo.css" type="text/css" />
-<script type="text/javascript" src="../js/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="../lib/jquery-1.4.3.js"></script>
 <script type="text/javascript" src="todo.js"></script>
 </head>
 <body>
@@ -29,13 +29,18 @@
 						</tbody>
 					</table>
 				</div>
-				<div id="FinishedTasks" class="tasklist" style="display:none;">DeletedTasks</div>
+				<div id="FinishedTasks" class="tasklist" style="display:none;">
+					<table class="tasks">
+						<tbody>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<div id="details_container">
 			<div id="details">
-				<div class="headline">Auto waschen</div>
-				<div class="date">28.10.2010</div>
+				<div class="headline"></div>
+				<div class="date"></div>
 			</div>
 		</div>
 	</div>

@@ -4,7 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>My todo list</title>
 <link rel="stylesheet" href="todo.css" type="text/css" />
+<link rel="stylesheet" href="../lib/css/ui-lightness/jquery-ui-1.8.6.custom.css" type="text/css" />
 <script type="text/javascript" src="../lib/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="../lib/jquery-ui-1.8.6.custom.min.js"></script>
 <script type="text/javascript" src="todo.js"></script>
 </head>
 <body>
@@ -21,38 +23,42 @@
 					<div class="spacer"></div>
 				</div>
 				<div id="newTask-container" class="tasklist">
-					<input type="text" id="newTask" name="newTask" value="">
+					<input type="text" id="newTask" class="textField" value="">
 				</div>
 				<div id="CurrentTasks" class="tasklist">
 					<table class="tasks">
 						<tbody>
-							<tr>
-								<td class="column0">Milch einkaufen</td>
-								<td class="column1">28.11.2010</td>
-							</tr>
-							<tr class="selected">
-								<td class="column0">Auto waschen</td>
-								<td class="column1">28.10.2010</td>
-							</tr>
-							<tr>
-								<td class="column0">zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt zu viel Inhalt</td>
-								<td class="column1">zu viel Inhalt zu viel Inhalt zu viel Inhalt</td>
-							</tr>
 						</tbody>
 					</table>
 				</div>
-				<div id="FinishedTasks" class="tasklist" style="display:none;">DeletedTasks</div>
+				<div id="FinishedTasks" class="tasklist" style="display:none;">
+					<table class="tasks">
+						<tbody>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<div id="details_container">
 			<div id="details">
-				<div class="headline">Auto waschen</div>
-				<div class="date">28.10.2010</div>
+				<div class="headline">
+					<div class="view">
+					</div>
+					<div class="edit" style="display: none;">
+						<input type="text" id="taskTitle" name="Title" class="textField" value="">
+					</div>
+				</div>
+				<div class="date">
+					<div class="view">
+					</div>
+					<div class="edit" style="display: none;">
+						<input type="text" id="taskDate" name="Date" class="textField" value="">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 </body>
 </html>

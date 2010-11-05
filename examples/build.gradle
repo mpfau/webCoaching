@@ -4,7 +4,7 @@ apply plugin: 'eclipse'
 
 sourceCompatibility = 1.5
 
-defaultTasks "clean", "package" 
+defaultTasks "clean", "assemble" 
 
 repositories {
     mavenCentral()
@@ -18,9 +18,12 @@ repositories {
 dependencies {
 //	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.0'
     testCompile 'junit:junit:4.7'
-    compile 'org.slf4j:slf4j-api:1.5.10'
-    compile 'org.slf4j:slf4j-simple:1.5.10'
-    compile 'org.jboss.resteasy:resteasy-jaxrs:1.2.1.GA'
+//    compile 'org.slf4j:slf4j-api:1.6.1'
+//    compile 'org.slf4j:slf4j-simple:1.6.1'
+    compile 'ch.qos.logback:logback-classic:0.9.18'
+    compile('org.jboss.resteasy:resteasy-jaxrs:1.2.1.GA'){
+    	exclude module: 'slf4j-simple'
+    }
     compile 'org.jboss.resteasy:resteasy-jackson-provider:1.2.1.GA'
     compile 'org.eclipse.jetty.aggregate:jetty-servlet:7.0.0.RC6'
 }
