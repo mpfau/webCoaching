@@ -234,8 +234,24 @@ http://yuml.me/diagram/scruffy;dir:LR;/class/edit/[Selector]-%3E1[DOM-Element],%
 !SLIDE bullets smaller
 # #4
 * save the business data as json
-* use jquery to make use of the data
+* use jquery to fill the tables and details view
 
+!SLIDE bullets smaller
+# #5
+* add editing features
+* add the possibility to add new tasks
+
+!SLIDE bullets smaller
+# #6
+* Connect to the REST backend
+
+!SLIDE bullets smaller
+# #7
+* Go offline!
+
+!SLIDE bullets smaller
+# #8
+* Push-Enable the application  
 
 !SLIDE bullets smaller
 #How to move on?
