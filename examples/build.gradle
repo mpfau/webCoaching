@@ -4,7 +4,7 @@ apply plugin: 'eclipse'
 
 sourceCompatibility = 1.5
 
-defaultTasks "clean", "assemble" 
+defaultTasks "clean", "build" 
 
 repositories {
     mavenCentral()
@@ -25,8 +25,10 @@ dependencies {
     	exclude module: 'slf4j-simple'
     }
     compile 'org.jboss.resteasy:resteasy-jackson-provider:1.2.1.GA'
-    compile 'org.eclipse.jetty.aggregate:jetty-servlet:7.0.0.RC6'
+    compile 'org.eclipse.jetty.aggregate:jetty-servlet:7.2.0.v20101020'
 }
+
+task eclipse.dependsOn(":cleanEclipse")
 
 task wrapper(type: Wrapper) {
     gradleVersion = '0.9-rc-2'

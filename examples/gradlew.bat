@@ -13,8 +13,8 @@
 if "%OS%"=="Windows_NT" setlocal
 
 @rem Uncomment those lines to set JVM options. GRADLE_OPTS and JAVA_OPTS can be used together.
-@rem set GRADLE_OPTS=%GRADLE_OPTS% -Xmx512m -Dhttp.proxyHost= -Dhttp.proxyPort=
-@rem set JAVA_OPTS=%JAVA_OPTS% -Xmx512m
+@rem set GRADLE_OPTS=%GRADLE_OPTS% -Xmx512m
+set JAVA_OPTS=%JAVA_OPTS% -Xmx512m -Dhttp.proxyHost=10.10.11.111 -Dhttp.proxyPort=3128
 
 set DIRNAME=%~dp0
 if "%DIRNAME%" == "" set DIRNAME=.\

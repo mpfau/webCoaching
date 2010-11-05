@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>My todo list</title>
+<link rel="stylesheet" href="todo.css" type="text/css" />
+<link rel="stylesheet" href="../lib/css/ui-lightness/jquery-ui-1.8.6.custom.css" type="text/css" />
+<script type="text/javascript" src="../lib/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="../lib/jquery-ui-1.8.6.custom.min.js"></script>
+<script type="text/javascript" src="../lib/json2.js"></script>
+<script type="text/javascript" src="../lib/jquery.ws-0.4-pre.js"></script>
+<script type="text/javascript" src="todo.js"></script>
+</head>
+<body>
+<div id="content">
+	<div id="header">Status: Online</div>
+	<div class="horizontalBox">
+		<div id="tasks_container">
+			<div id="tasks">
+				<div class="tabs">
+					<div class="spacer"></div>
+					<div class="tab selected">Current</div>
+					<div class="spacer"></div>
+					<div class="tab">Finished</div>
+					<div class="spacer"></div>
+				</div>
+				<div id="newTask-container" class="tasklist">
+					<input type="text" id="newTask" class="textField" value="">
+				</div>
+				<div id="CurrentTasks" class="tasklist">
+					<table class="tasks">
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				<div id="FinishedTasks" class="tasklist" style="display:none;">
+					<table class="tasks">
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="details_container">
+			<div id="details">
+				<div class="headline">
+					<div class="view">
+					</div>
+					<div class="edit" style="display: none;">
+						<input type="text" id="taskTitle" name="title" class="textField" value="">
+					</div>
+				</div>
+				<div class="date">
+					<div class="view">
+					</div>
+					<div class="edit" style="display: none;">
+						<input type="text" id="taskDate" name="date" class="textField" value="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
