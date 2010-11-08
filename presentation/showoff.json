@@ -1,1 +1,7 @@
-{ "name": "Javascript and CSS introduction", "sections": [ {"section":"title"}, {"section":"css"} ]}
+{ "name": "Javascript and CSS introduction", 
+  "sections": [ 
+  	{"section":"title"}, 
+  	{"section":"css" },
+  	{"section":"javascript" } 
+  ]
+}

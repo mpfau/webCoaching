@@ -2,6 +2,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 //usePlugin 'groovy'
 
+version = 1.0
+
 sourceCompatibility = 1.5
 
 defaultTasks "clean", "build" 
@@ -32,4 +34,11 @@ task eclipse.dependsOn(":cleanEclipse")
 
 task wrapper(type: Wrapper) {
     gradleVersion = '0.9-rc-2'
+}
+
+jar {
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    manifest {
+        attributes 'Main-Class': 'server.MyServer', 'Implementation-Version': version
+    }
 }

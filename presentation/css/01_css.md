@@ -16,7 +16,7 @@
 	</body>
 	</html>
 
-!SLIDE
+
 !SLIDE bullets incremental smaller
 # Cascading StyleSheets (CSS)
 
@@ -46,7 +46,7 @@
 <br/>
 ![Selector -> DOM-Element](selectorDom.png)
 <!--Edit the UML-Diagram:
-http://yuml.me/diagram/scruffy;dir:LR;/class/edit/[Selector]-%3E1[DOM-Element],%20[DOM-Element]%5E[%3Ctable%3E],%20[DOM-Element]%5E[%3C...%3E],%20[DOM-Element]%5E[%3Cdiv%3E]
+http://yuml.me/diagram/scruffy;dir:LR;/class/edit/[Selector]-%3En[DOM-Element],%20[DOM-Element]%5E[%3Ctable%3E],%20[DOM-Element]%5E[%3C...%3E],%20[DOM-Element]%5E[%3Cdiv%3E]
  -->
 
 !SLIDE
@@ -116,9 +116,13 @@ http://yuml.me/diagram/scruffy;dir:LR;/class/edit/[Selector]-%3E1[DOM-Element],%
 	/* combination */
 	div#myDivId.styleClass a:visited {background-color: blue;}
 
-!SLIDE bullets smaller
-# Combine multiple selectors (relationships)
-* <http://de.wikipedia.org/wiki/Cascading_Style_Sheets#Definition_des_Syntaxschemas>
+!SLIDE bullets smaller incremental
+# [Combine multiple selectors](http://de.wikipedia.org/wiki/Cascading_Style_Sheets#Definition_des_Syntaxschemas)
+* A > B (B is a child of A) 
+* A + B (B is the next sibling of A)
+* A[foo='bar']
+* A B (B is a descendant of A)
+* div, a (union of all elements of type *div* and *a*)
 	
 !SLIDE bullets smaller
 # [Selector evaluation](http://de.selfhtml.org/css/formate/kaskade.htm#spezifitaet)
@@ -212,8 +216,14 @@ http://yuml.me/diagram/scruffy;dir:LR;/class/edit/[Selector]-%3E1[DOM-Element],%
 * e.g. don't use `td.column0 { width: 80%; }`
 * but `table.tasks > tbody > tr > td.column0`
 
-!SLIDE
+!SLIDE bullets smaller
 # Tasks
+* [download examples](https://github.com/mpfau/webCoaching/zipball/master) and unzip
+* `$ cd examples`
+* `$ gradlew`
+* `$ java -jar build/libs/examples-1.0.jar`
+* use a good texteditor or [ide for CSS and JavaScript](http://www.eclipse.org/downloads/packages/eclipse-ide-javascript-web-developers/heliossr1)
+* Chrome or Firefox + Firebug are developers swiss army knifes!
 
 !SLIDE bullets smaller
 # #1
@@ -224,49 +234,3 @@ http://yuml.me/diagram/scruffy;dir:LR;/class/edit/[Selector]-%3E1[DOM-Element],%
 # #2
 * Edit the css-File of example_02 for matching example_03
 * You have to use CSS3!
-
-!SLIDE bullets smaller
-# #3
-* Javascript kick-start:
-* Include jquery library
-* create a message box
-
-!SLIDE bullets smaller
-# #4
-* save the business data as json
-* use jquery to fill the tables and details view
-
-!SLIDE bullets smaller
-# #5
-* add editing features
-* add the possibility to add new tasks
-
-!SLIDE bullets smaller
-# #6
-* Connect to the REST backend
-
-!SLIDE bullets smaller
-# #7
-* Go offline!
-
-!SLIDE bullets smaller
-# #8
-* Push-Enable the application  
-
-!SLIDE bullets smaller
-#How to move on?
-* multiple selection -> updates, deletes
-* offline mode (HTML5)
-* push of data, e.g. concurrent modification (HTML5 comet)
-* let the user add tabs (jquery-ui) plugin
-* provide a date selector (jquery-ui) 
-
-
-TODO:
---Javascript samples
---Ajax Samples
---Offline Samples
---Javascript Folien
---Portal Folien
---Sproutcore Samples und Folien
-

@@ -20,6 +20,7 @@ import server.MyServer;
 public class TaskServiceTest {
 	private MyServer server;
 	private HttpClient client;
+	private String url = "http://localhost:8080/service/tasks/";
 
 	@Before
 	public void startServer() throws Exception {
@@ -36,7 +37,7 @@ public class TaskServiceTest {
 
 	@Test
 	public void getEmptyTaskList() throws IOException {
-		GetMethod get = new GetMethod("http://localhost:8080/service/tasks");
+		GetMethod get = new GetMethod(url);
 		assertEquals(HttpStatus.SC_OK, client.executeMethod(get));
 		assertEquals("[]", get.getResponseBodyAsString());
 		get.releaseConnection();
@@ -44,12 +45,12 @@ public class TaskServiceTest {
 	
 	@Test
 	public void createTask() throws IOException {
-		PutMethod put= new PutMethod("http://localhost:8080/service/tasks");
+		PutMethod put= new PutMethod(url);
 		put.setRequestEntity(new FileRequestEntity(new File(getClass().getResource("task_01.json").getFile()), "application/json"));
 		assertEquals(HttpStatus.SC_NO_CONTENT, client.executeMethod(put));
 		put.releaseConnection();
 		
-		GetMethod get = new GetMethod("http://localhost:8080/service/tasks");
+		GetMethod get = new GetMethod(url);
 		assertEquals(HttpStatus.SC_OK, client.executeMethod(get));
 		assertEquals("[{\"id\":1,\"state\":\"Current\",\"date\":\"1293490800000\",\"title\":\"Den REST-Service testen\"}]", get.getResponseBodyAsString());
 		
@@ -57,17 +58,17 @@ public class TaskServiceTest {
 	
 	@Test
 	public void updateTask() throws IOException {
-		PutMethod put= new PutMethod("http://localhost:8080/service/tasks");
+		PutMethod put= new PutMethod(url);
 		put.setRequestEntity(new FileRequestEntity(new File(getClass().getResource("task_01.json").getFile()), "application/json"));
 		assertEquals(HttpStatus.SC_NO_CONTENT, client.executeMethod(put));
 		put.releaseConnection();
 		
-		PostMethod post= new PostMethod("http://localhost:8080/service/tasks/1");
+		PostMethod post= new PostMethod(url + "1");
 		post.setRequestEntity(new FileRequestEntity(new File(getClass().getResource("task_02.json").getFile()), "application/json"));
 		assertEquals(HttpStatus.SC_NO_CONTENT, client.executeMethod(post));
 		post.releaseConnection();
 		
-		GetMethod get = new GetMethod("http://localhost:8080/service/tasks");
+		GetMethod get = new GetMethod(url);
 		assertEquals(HttpStatus.SC_OK, client.executeMethod(get));
 		assertEquals("[{\"id\":1,\"state\":\"Finished\",\"date\":\"1293490800000\",\"title\":\"Den REST-Service erneut testen\"}]", get.getResponseBodyAsString());
 		get.releaseConnection();

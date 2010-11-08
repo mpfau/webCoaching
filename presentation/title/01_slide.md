@@ -4,13 +4,15 @@
 ## Matthias Pfau
 ## Zühlke Engineering GmbH
 
+<br/>
+###<http://webcoaching.heroku.com/>
+
 !SLIDE bullets incremental
 # Topics
 
 * css
 * javascript
 * jquery
-* sproutcore
 * portal development
 
 !SLIDE center

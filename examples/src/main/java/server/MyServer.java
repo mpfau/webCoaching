@@ -17,7 +17,7 @@ public class MyServer {
 		server.start();
 	}
 	
-	public void start() throws Exception {
+	public MyServer start() throws Exception {
 		server = new Server(8080);
 
 		HandlerList handlers = new HandlerList();
@@ -25,6 +25,7 @@ public class MyServer {
 		server.setHandler(handlers);
 
 		server.start();
+		return this;
 	}
 
 	private Handler createEventBusServletHandler() {
